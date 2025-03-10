@@ -841,6 +841,7 @@ hr {
     color: black;
     border: none;
     position: absolute;
+    cursor: pointer;
 }
 
 .btnLeft:hover,
