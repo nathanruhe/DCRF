@@ -4,6 +4,7 @@ navToggle = document.querySelector("#nav-toggle");
 navClose = document.querySelector("#nav-close");
 
 /* Menu show */
+/* Validate if constant exists */
 if (navToggle) {
     navToggle.addEventListener("click", () => {
         navMenu.classList.add("show-menu");
@@ -11,6 +12,7 @@ if (navToggle) {
 }
 
 /* Menu hidden */
+/* Validate if constant exists */
 if (navClose) {
     navClose.addEventListener("click", () => {
         navMenu.classList.remove("show-menu");
@@ -18,7 +20,16 @@ if (navClose) {
 }
 
 /* --------- REMOVE MENU MOBILE --------- */
+const navLink = document.querySelectorAll(".nav__link");
 
+function linkAction() {
+    const navMenu = document.querySelector("#nav-menu");
+
+  // when we click on each nav__link, we remove the show-menu class
+    navMenu.classList.remove("show-menu");
+}
+
+navLink.forEach((n) => n.addEventListener("click", linkAction));
 
 
 /* --------- SHOW SCROLL UP --------- */
@@ -76,12 +87,12 @@ const servicios = [
         { 
             src: "assets/img/tejado/demoussage.jpg", 
             titulo: "Nettoyage de toiture", 
-            descripcion: "C'est le processus de nettoyage en profondeur du toit pour éliminer la saleté, la poussière, les feuilles, les débris et les dépôts de pollution. Cet entretien régulier améliore l'apparence du toit, prévient l'accumulation de mousse et de lichens, et aide à conserver l'intégrité des matériaux, prolongeant ainsi leur durée de vie et évitant d'éventuels dommages structurels ou infiltrations d'eau."
+            descripcion: "Le nettoyage de toiture élimine la saleté, les feuilles, les débris et les dépôts de pollution. Il prévient l'accumulation de mousse et de lichens, améliore l'apparence du toit et prolonge sa durée de vie en évitant les dommages et les infiltrations d'eau."
         },
         { 
             src: "assets/img/tejado/traitement-charpente-en-bois-03122019-1514.webp", 
             titulo: "Traitement de bois de charpente", 
-            descripcion: "Il s'agit d'un processus destiné à protéger le bois structurel d'un bâtiment contre les parasites (comme les termites et les insectes xylophages) et les champignons. Ce traitement est essentiel pour maintenir l'intégrité structurelle du toit et prévenir la détérioration causée par des facteurs biologiques et environnementaux."
+            descripcion: "Le traitement du bois protège les structures contre les parasites (termites, insectes xylophages) et les champignons. Il préserve l'intégrité du toit et évite la détérioration due aux facteurs biologiques et environnementaux."
         },
         { 
             src: "assets/img/tejado/Ootravaux-prix-gouttiere-pvc_1000x667.png", 
@@ -96,12 +107,12 @@ const servicios = [
         { 
             src: "assets/img/tejado/faitage-maconne.jpg", 
             titulo: "Faîtage", 
-            descripcion: "C'est la partie supérieure d'un toit incliné où les deux pentes principales se rencontrent. Cette section est scellée à l'aide d'une rangée de tuiles spéciales ou d'un joint de mortier pour assurer l'étanchéité du toit."
+            descripcion: "C'est la partie supérieure d'un toit incliné, où les deux pentes principales se rencontrent. Cette section est scellée avec des tuiles spéciales ou un joint de mortier, assurant ainsi l'étanchéité du toit et évitant les infiltrations d'eau, tout en protégeant la structure."
         },
         { 
             src: "assets/img/tejado/WhatsApp-Image-2022-02-09-at-12.12.33-4.jpeg", 
             titulo: "Bande de rive", 
-            descripcion: "C'est une pièce installée sur le bord du toit pour le protéger de l'humidité et améliorer son apparence. Elle évite les infiltrations d'eau et aide à maintenir la durabilité de la structure."
+            descripcion: "C'est une pièce installée sur le bord du toit pour le protéger de l'humidité et améliorer son apparence. Elle empêche les infiltrations d'eau, protège les matériaux sous-jacents et aide à maintenir la durabilité de la structure en renforçant son étanchéité."
         },
         { 
             src: "assets/img/tejado/images.jpeg", 
@@ -128,7 +139,7 @@ const servicios = [
         { 
             src: "assets/img/fachada/hydrofugation_facade-3.jpg", 
             titulo: "Hydrofuge de façade", 
-            descripcion: "Il s'agit d'un traitement imperméabilisant appliqué sur les murs extérieurs d'un bâtiment pour les protéger contre l'humidité et les infiltrations d'eau. Ce produit, généralement sous forme liquide (à base de siloxane, acrylique ou résines), pénètre dans les pores du matériau sans modifier son apparence ni sa capacité à respirer."
+            descripcion: "L'hydrofugation des façades est un traitement imperméabilisant appliqué sur les murs extérieurs pour les protéger de l'humidité. À base de siloxane, d'acrylique ou de résines, il pénètre les pores sans altérer l'aspect ni la respirabilité du matériau."
         },
         { 
             src: "assets/img/fachada/pulverisation-anti-mousse-facade-scaled-1.webp", 
@@ -143,22 +154,22 @@ const servicios = [
         { 
             src: "assets/img/fachada/ravalement-facade-facadier.jpg", 
             titulo: "Ravalement de façade", 
-            descripcion: "C'est un processus de restauration qui consiste à nettoyer, réparer et protéger les murs extérieurs d'un bâtiment. Il inclut l'élimination de la saleté, la réparation des fissures, l'application d'un nouveau revêtement et, dans certains cas, un traitement imperméabilisant. Son objectif est d'améliorer l'esthétique, de renforcer la structure et de garantir la protection contre l'humidité et les agents climatiques."
+            descripcion: "Il s'agit d'un processus de restauration des murs extérieurs d'un bâtiment, comprenant le nettoyage, la réparation des fissures, l'application d'un nouveau revêtement et parfois un traitement imperméabilisant. L'objectif est d'améliorer l'esthétique, de renforcer la structure et de protéger contre l'humidité et les conditions climatiques."
         },
         { 
             src: "assets/img/fachada/isolation1-480x0-c-default.jpg", 
             titulo: "Revêtement de façade", 
-            descripcion: "Il s'agit de la couche de finition appliquée sur les murs extérieurs d'un bâtiment pour le protéger contre l'humidité, la pollution et les conditions climatiques. Elle peut être réalisée en différents matériaux tels que la pierre, le bois, la brique, le métal, le mortier ou les panneaux composites, et en plus de sa fonction protectrice, elle améliore l'esthétique et l'isolation thermique du bâtiment."
+            descripcion: "Il s'agit de la couche de finition appliquée sur les murs extérieurs d'un bâtiment pour le protéger contre l'humidité, la pollution et les conditions climatiques. Réalisée en divers matériaux (pierre, bois, brique, métal, mortier, panneaux composites), elle améliore à la fois l'esthétique, l'isolation thermique et la protection du bâtiment."
         },
         { 
             src: "assets/img/fachada/mauerwerk-sanieren-992x661.jpg", 
             titulo: "Traitement d’humidité", 
-            descripcion: "Il consiste à appliquer des solutions pour éliminer et prévenir les problèmes d'humidité dans les murs, les plafonds ou les sols. Cela peut inclure l'imperméabilisation, la ventilation, le drainage ou l'utilisation de produits spécifiques en fonction du type d'humidité (capillarité, infiltration ou condensation). Son objectif est de protéger la structure du bâtiment et d'améliorer le confort intérieur."
+            descripcion: "Il s'agit de solutions pour éliminer et prévenir les problèmes d'humidité dans les murs, plafonds ou sols. Cela inclut l'imperméabilisation, la ventilation, le drainage ou l'utilisation de produits spécifiques selon le type d'humidité (capillarité, infiltration, condensation). L'objectif est de protéger la structure du bâtiment et d'améliorer le confort intérieur."
         },
         { 
             src: "assets/img/fachada/diagnostic-remontees-capillaires-1-1024x768.jpg", 
             titulo: "Remontées capillaires", 
-            descripcion: "Il s'agit d'un problème d'humidité dans les murs causé par l'absorption d'eau du sol à travers des matériaux poreux. Ce phénomène affecte particulièrement les constructions sans barrière imperméable adéquate, provoquant des taches, de la moisissure et la dégradation des revêtements. Pour y remédier, on peut appliquer des injections de résine hydrofuge, installer des barrières physiques ou améliorer la ventilation et le drainage du terrain."
+            descripcion: "L'humidité ascendante est causée par l'absorption d'eau du sol à travers des matériaux poreux, surtout dans les constructions sans barrière étanche. Elle provoque des taches, de la moisissure et la dégradation des revêtements. Pour y remédier, on peut injecter une résine hydrofuge, poser des barrières physiques ou améliorer la ventilation et le drainage."
         },
         { 
             src: "assets/img/fachada/scalp-anti-salpetre.jpeg", 
@@ -168,29 +179,29 @@ const servicios = [
         { 
             src: "assets/img/fachada/cave-humide.jpeg", 
             titulo: "Cave humide", 
-            descripcion: "Il s'agit d'un espace souterrain ou dans les fondations d'un bâtiment où l'humidité est un problème fréquent. Cela peut provoquer des mauvaises odeurs, de la moisissure et détériorer les structures et objets stockés. Le traitement consiste généralement à améliorer la ventilation, appliquer des solutions imperméabilisantes et, dans certains cas, installer un système de drainage pour contrôler l'humidité."
+            descripcion: "Il s'agit d'un espace souterrain ou dans les fondations où l'humidité cause des problèmes comme des mauvaises odeurs, de la moisissure et des dommages aux structures. Le traitement inclut l'amélioration de la ventilation, l'application de solutions imperméabilisantes et, parfois, l'installation d'un système de drainage pour contrôler l'humidité."
         },
         { 
             src: "assets/img/fachada/condensation-humidite-plafond.jpg", 
             titulo: "Infiltrations d’eau", 
-            descripcion: "Il s'agit de l'entrée d'eau indésirable dans un bâtiment, généralement à travers des fissures ou des crevasses dans les murs, les plafonds ou les fondations. Cela peut être causé par des infiltrations de pluie, des problèmes de drainage ou des dommages aux structures. Ce phénomène peut endommager les matériaux, provoquer de la moisissure et affecter la qualité de l'air intérieur. Le traitement inclut l'étanchéisation des fissures, l'amélioration du drainage et l'application de produits imperméabilisants."
+            descripcion: "L'infiltration d'eau est causée par l'entrée d'eau à travers des fissures ou des crevasses dans les murs, plafonds ou fondations. Elle résulte souvent de la pluie, de mauvais drainage ou de dommages structurels, provoquant moisissures et dégradations. Le traitement inclut l'étanchéisation des fissures, l'amélioration du drainage et l'usage de produits imperméabilisants."
         },
         { 
             src: "assets/img/fachada/karcher-terrasse.jpg", 
             titulo: "Nettoyage terrasse", 
-            descripcion: "Il consiste à éliminer la saleté, les algues, la moisissure, les taches d'huile et autres résidus accumulés sur le sol de la terrasse. On utilise des méthodes telles que le lavage à haute pression, le brossage ou des produits spécifiques en fonction du matériau (carrelage, bois, pierre, etc.). Ce processus améliore non seulement l'apparence, mais il aide également à maintenir la durabilité des matériaux et à prévenir les problèmes d'humidité ou de glissades."
+            descripcion: "Le nettoyage de terrasse élimine la saleté, les algues, la moisissure et les taches d'huile à l'aide de lavage haute pression, de brossage ou de produits adaptés au matériau (carrelage, bois, pierre). Il améliore l'apparence, préserve la durabilité et prévient l'humidité et les risques de glissade."
         }
     ],
     [
         { 
             src: "assets/img/aislamiento/pose-pse-ite.jpg", 
             titulo: "Isolation thermique extérieur", 
-            descripcion: "Il s'agit d'un système appliqué sur les façades pour améliorer l'efficacité énergétique. Il consiste à poser des matériaux isolants tels que le polystyrène, la laine minérale ou le polyuréthane sur les murs extérieurs, puis à les recouvrir d'une couche protectrice. Cette isolation réduit les pertes de chaleur en hiver et garde l'intérieur frais en été, améliorant ainsi le confort et réduisant la consommation d'énergie."
+            descripcion: "L'isolation de façade améliore l'efficacité énergétique en posant des matériaux isolants (polystyrène, laine minérale, polyuréthane) sur les murs extérieurs, puis en les recouvrant d'une couche protectrice. Elle réduit les pertes de chaleur en hiver et garde l'intérieur frais en été, offrant confort et économies d'énergie."
         },
         { 
             src: "assets/img/aislamiento/images.jpeg", 
             titulo: "Isolation combles", 
-            descripcion: "Cela consiste à poser des matériaux isolants dans les toitures ou les combles pour éviter la perte de chaleur en hiver et l'excès de chaleur en été. On utilise des matériaux comme la laine minérale, le polystyrène ou la cellulose, ce qui améliore l'efficacité énergétique et le confort intérieur, tout en réduisant les factures de chauffage et de climatisation. Cela prévient également la condensation et maintient une température constante."
+            descripcion: "L'isolation de toiture consiste à poser des matériaux isolants (laine minérale, polystyrène, cellulose) pour éviter les pertes de chaleur en hiver et l'excès de chaleur en été. Elle améliore l'efficacité énergétique, réduit les factures et maintient une température constante, tout en prévenant la condensation."
         },
         { 
             src: "assets/img/aislamiento/combles-perdus-isoles-laine-charpente.jpg", 
@@ -212,7 +223,7 @@ const servicios = [
         { 
             src: "assets/img/energia/schema-implantation-vmc-double-flux.jpg", 
             titulo: "VMC Double Flux", 
-            descripcion: "Il s'agit d'un système de ventilation qui non seulement extrait l'air vicié de l'intérieur, mais introduit également de l'air frais provenant de l'extérieur, en passant par un échangeur de chaleur. Cela permet de récupérer la chaleur de l'air extrait et de préchauffer l'air frais, améliorant ainsi l'efficacité énergétique et maintenant une température constante à l'intérieur de la maison, tout en assurant une excellente qualité de l'air."
+            descripcion: "Il s'agit d'un système de ventilation double flux qui extrait l'air vicié tout en introduisant de l'air frais de l'extérieur via un échangeur de chaleur. Ce procédé récupère la chaleur de l'air extrait pour préchauffer l'air entrant, améliorant ainsi l'efficacité énergétique et maintenant une température constante, tout en garantissant une bonne qualité de l'air intérieur."
         },
         { 
             src: "assets/img/energia/vmc-ventilation-isotech-3a1ffbdbbd10c79774cb53d720b24f26.jpg", 
@@ -222,17 +233,17 @@ const servicios = [
         { 
             src: "assets/img/energia/adoucisseur.jpg", 
             titulo: "Adoucisseur d’eau", 
-            descripcion: "Il s'agit d'un dispositif utilisé pour réduire la dureté de l'eau en éliminant ou en réduisant les minéraux tels que le calcium et le magnésium. Cela évite la formation de calcaire dans les tuyaux et les appareils électroménagers, ce qui améliore leur efficacité et prolonge leur durée de vie. De plus, il contribue à avoir une eau plus douce pour un usage domestique, idéale pour le soin de la peau et des cheveux."
+            descripcion: "Il s'agit d'un adoucisseur d'eau qui réduit la dureté de l'eau en éliminant les minéraux comme le calcium et le magnésium. Cela prévient la formation de calcaire dans les tuyaux et appareils électroménagers, améliorant leur efficacité et prolongeant leur durée de vie. Il rend également l'eau plus douce pour la peau et les cheveux."
         },
         { 
             src: "assets/img/energia/radiateur-puissance.jpg", 
             titulo: "Radiateurs", 
-            descripcion: "Ce sont des dispositifs de chauffage qui utilisent de l'eau chaude ou de l'électricité pour chauffer l'air d'une pièce. Il existe différents types, tels que ceux à eau chaude (connectés au système de chauffage central) ou électriques. Ils offrent une distribution efficace de la chaleur dans les espaces fermés, assurant ainsi le confort thermique pendant l'hiver et aidant à maintenir une température agréable à la maison."
+            descripcion: "Les radiateurs sont des dispositifs de chauffage qui utilisent de l'eau chaude ou de l'électricité pour chauffer l'air d'une pièce. Il en existe de différents types, comme les modèles à eau chaude (reliés au chauffage central) ou électriques. Ils assurent une distribution efficace de la chaleur, garantissant le confort thermique en hiver et maintenant une température agréable à la maison."
         },
         { 
             src: "assets/img/energia/termo.jpg", 
             titulo: "Ballon d’eau chaude", 
-            descripcion: "Il s'agit d'un appareil qui stocke de l'eau chaude pour une utilisation domestique. Il fonctionne en chauffant l'eau grâce à l'électricité ou au gaz, et la stocke dans un réservoir isolé pour maintenir la température tout au long de la journée. Il est idéal pour les maisons ayant une forte demande en eau chaude, comme pour les douches, la cuisine et les machines à laver, garantissant ainsi qu'il y ait toujours de l'eau à la température."
+            descripcion: "Il s'agit d'un chauffe-eau qui stocke de l'eau chaude pour un usage domestique. Il chauffe l'eau à l'électricité ou au gaz, puis la conserve dans un réservoir isolé pour maintenir sa température. Idéal pour les foyers avec une forte demande en eau chaude, il garantit un approvisionnement constant pour les douches, la cuisine et les machines à laver."
         }
     ],
 ];
