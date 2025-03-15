@@ -724,7 +724,6 @@ hr {
 }
 
 .sobre__espacio {
-    /* border: 3px solid red; */
     height: 60px;
     background: white;
     position: relative;
@@ -1410,6 +1409,10 @@ iframe {
     }
 
     /* -------- HEADER -------- */
+    .header {
+        position: fixed;
+    }
+
     .nav__toggle,
     .nav__close {
         display: block;
@@ -1420,10 +1423,12 @@ iframe {
         top: 0;
         right: -100%;
         width: 100%;
-        height: 60vh;
+        height: fit-content;
         background-color: var(--second-color);
         padding: 4rem 2rem;
         transition: all 0.8s ease-in-out;
+        justify-content: center;
+        align-items: center;
     }
 
     .show-menu {
@@ -1433,6 +1438,11 @@ iframe {
     .nav__list {
         flex-direction: column;
         row-gap: 1.125rem;
+        gap: 12px;
+    }
+
+    .nav__link {
+        font-weight: bold;
     }
 
     .nav__close {
@@ -1449,6 +1459,10 @@ iframe {
     .nav__close,
     .nav__toggle {
         cursor: pointer;
+    }
+
+    .nav__menu-contact {
+        margin-bottom: 30px;
     }
 
     .nav__menu-contact div {
@@ -1472,11 +1486,13 @@ iframe {
         text-align: center;
     }
 
-/* -------- HOME -------- */
+    /* -------- HOME -------- */
     .home {
-        height: calc(100vh - 150px);
+        margin-top: 150px;
+        height: 100%;
+        padding: 20px 0;
     }
-
+    
     .home__div {
         flex-direction: column;
     }
@@ -1487,14 +1503,15 @@ iframe {
     
     .home__logo img {
         padding: 0 20px 20px 20px;
-        width: 80%;
+        width: 100%;
         margin-bottom: initial;
     }
     
     .home__cards {
         padding: 10px 0;
-        gap: 20px;
+        gap: 15px;
         width: 100%;
+        margin-top: -10px;
     }
     
     .home__cards div {
@@ -1512,397 +1529,429 @@ iframe {
         font-size: 18px;
     }
 
-/* -------- SOBRE -------- */
-.sobre {
-    padding: 0;
-    scroll-margin-block: 0;
-}
-
-.sobre__empresa {
-    /* border: 3px solid green; */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding: 40px 0 0;
-}
-
-.sobre__empresa h2 {
-    text-align: center;
-}
-
-.sobre__historia {
-    flex-direction: column;
-    padding: 0;
-    gap: 0;
-}
-
-.sobre__historia--img {
-    display: none;
-}
-
-.sobre__historia--text {
-    box-shadow: none;
-    padding: 20px 10px;
-    width: 100%;
-    position: static;
-    line-height: 1.2rem;
-    text-align: center;
-    border-radius: 10px 10px 0 0;
-}
-
-.sobre__historia--text h1 {
-    line-height: 1.5rem;
-    margin: 0 20px 10px;
-}
-
-.sobre__historia--action {
-    border-radius: 0;
-    padding: 20px;
-    gap: 20px;
-    position: static;
-    line-height: 1.2rem;
-}
-
-.sobre__mision {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.sobre__mision h2 {
-    margin-bottom: -20px;
-}
-
-.sobre__mision--div {
-    flex-direction: column;
-    gap: 10px;
-    padding: 0;
-    height: 100%;
-}
-
-.sobre__mision--div .sobre__mision--order {
-    order: 1;
-}
-
-.sobre__mision--div div p {
-    line-height: 1.4rem;
-    padding: 0 10px;
-}
-
-.sobre__span {
-    margin: 0 auto;
-}
-
-.sobre__mision--div h3 {
-    width: 100%;
-    margin-left: 0;
-    padding-left: 20px;
-    margin-bottom: 10px;
-}
-
-#vision {
-    text-align: center;
-    padding-left: 0;
-}
-
-hr {
-    display: none;
-}
-
-.sobre__mision--div2 {
-    flex-direction: column;
-    gap: 10px;
-    padding: 0;
-    height: 100%;
-    margin-top: 0;
-}
-
-.sobre__mision--div2 h3 {
-    width: 100%;
-    margin-left: 0;
-    margin-bottom: 10px;
-    text-align: end;
-    padding-right: 20px;
-}
-
-.sobre__mision--container1 {
-    width: 100%;
-}
-
-.sobre__mision--container1 p {
-    line-height: 1.4rem;
-    padding: 0 10px;
-}
-
-.sobre__mision--container {
-    flex-direction: column;
-    gap: 15px;
-}
-
-.sobre__mision--text {
-    box-shadow: 0 2px 5px black;
-    padding: 15px 20px;
-    height: 100%;
-}
-
-.sobre__mapa {
-    /* border: 5px solid black; */
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    margin-top: 0px;
-    margin-bottom: -20px;
-}
-
-.sobre__mapa--text {
-    /* border: 3px solid violet; */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.sobre__mapa--text p {
-    padding: 0 20px;
-    text-align: center;
-    margin-top: 0px;
-}
-
-.sobre__mapa--container {
-    display: none;
-}
-
-.sobre__mapa--img {
-    width: 100%;
-    margin-top: -20px;
-    margin-bottom: -30px;
-}
-
-.sobre__google {
-    padding: 0;
-}
-
-.sobre__google--title {
-    flex-direction: column;
-    gap: 20px;
-}
-
-.btn-google {
-    background-color: #d8eead;
-    border: none;
-    border-radius: 50px;
-    padding: 0.3rem 1rem;
-}
-
-.btn-google:hover {
-    background-color: #d8eead;
-    box-shadow: 0 0 5px 1px black;
-    color: var(--second-color);
-}
-
-hr {
-    margin: 0 50px;
-}
-
-/* -------- SERVICIOS -------- */
-.servicios {
-    scroll-margin-block: 0;
-}
-
-.servicios__introduccion h1 {
-    font-size: 1.8rem;
-    padding: 0 48px;
-}
-
-.servicios__introduccion p {
-    font-size: 1.1rem;
-    margin: 0 auto 20px;
-}
-
-.servicios__div {
-    gap: 30px;
-    padding: 40px 20px;
-}
-
-.servicios__container {
-    flex-direction: column;
-    height: 100%;
-    gap: 10px;
-    padding: 0 0 10px 0;
-    box-shadow: 0px 7px 10px black;
-    border-radius: var(--radius);
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-.servicio__izquierda .servicios__texto {
-    order: 1;
-}
-
-.servicios__imagen {
-    min-height: 220px;
-    height: 220px;
-    box-shadow: none;
-}
-
-.servicios__imagen #servicio1,
-.servicios__imagen #servicio2,
-.servicios__imagen #servicio3,
-.servicios__imagen #servicio4 {
-    border-radius: 10px 10px 0 0;
-}
-
-.servicios__texto {
-    padding: 0 10px;
-    gap: 0px;
-    width: 100%;
-}
-
-.servicios__texto h2 {
-    font-size: 25px;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0);
-}
-
-.servicios__descripcion p {
-    line-height: 1.2rem;
-}
-
-/* -------- PREGUNTAS -------- */
-.preguntas {
-    scroll-margin-block: 0;
-}
-
-.preguntas__introduccion {
-    text-align: center;
-    gap: 10px;
-}
-
-.preguntas__introduccion h1 {
-    font-size: 1.8rem;
-    margin-left: 0;
-}
-
-.preguntas__introduccion div {
-    flex-direction: column;
-    gap: 20px;
-}
-
-.preguntas__introduccion p {
-    font-size: 1rem;
-    max-width: 100%;
-}
-
-.preguntas__div {
-    background-color: var(--second-color);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.preguntas2 {
-    height: 100%;
-}
-
-.preguntas3 {
-    width: 100%;
-    gap: 15px;
-    padding: 30px 10px;
-}
-
-.pregunta__imagen {
-    display: none;
-}
-
-.pregunta__titulo {
-    font-size: 1rem;
-}
-
-.pregunta__respuesta {
-    line-height: 1.2rem;
-}
-
-/* -------- PROYECTOS -------- */
-.proyectos {
-    padding: 30px 0 70px;
-    /* scroll-margin-block: 150px; */
-    scroll-margin-block: 0;
-}
-
-.proyectos__introduccion h1 {
-    font-size: 1.8rem;
-}
-
-/* Flexbox Layout for Horizontal Sections */
-.experience-section {
-    gap: 10px;
-    padding: 0 20px;
-    height: 90px;
-}
-
-.experience-item {
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.proyectos__container {
-    width: 100%;
-}
-
-.proyectos__div {
-    grid-template-columns: repeat(1, 1fr);
-    width: 100%;
-}
-
-.proyecto__imagen {
-    height: 220px;
-}
-
-.proyectos__div .proyecto:nth-child(1) {
-    grid-column: span 1;
-}
-
-.proyectos__div .proyecto:nth-child(5) {
-    grid-column: span 1;
-}
-
-/* ! queda revisar a partir de aqui el tema de proyectos */
-/* Estilos para el lightbox */
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.lightbox-content {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.lightbox__img {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 10px;
-}
-
-
-/* -------- CONTACTO -------- */
+    /* -------- SOBRE -------- */
+    .sobre {
+        padding: 0;
+        scroll-margin-block: 150px;
+    }
+
+    .sobre__empresa {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding: 40px 0 0;
+    }
+
+    .sobre__empresa h2 {
+        text-align: center;
+    }
+
+    .sobre__historia {
+        flex-direction: column;
+        padding: 0;
+        gap: 0;
+    }
+
+    .sobre__historia--img {
+        display: none;
+    }
+
+    .sobre__historia--text {
+        box-shadow: none;
+        padding: 20px 10px;
+        width: 100%;
+        position: static;
+        line-height: 1.2rem;
+        text-align: center;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .sobre__historia--text h1 {
+        line-height: 1.5rem;
+        margin: 0;
+        font-size: 22px;
+    }
+
+    .sobre__historia--action {
+        border-radius: 0;
+        padding: 20px;
+        gap: 20px;
+        position: static;
+        line-height: 1.2rem;
+    }
+
+    .sobre__mision {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .sobre__mision h2 {
+        margin-bottom: -20px;
+        font-size: 22px;
+    }
+
+    .sobre__mision--div {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+        height: 100%;
+    }
+
+    .sobre__mision--div .sobre__mision--order {
+        order: 1;
+    }
+
+    .sobre__mision--div div p {
+        line-height: 1.4rem;
+        padding: 0 10px;
+    }
+
+    .sobre__span {
+        margin: 0 auto;
+    }
+
+    .sobre__mision--div h3 {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    #vision {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    hr {
+        display: none;
+    }
+
+    .sobre__mision--div2 {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+        height: 100%;
+        margin-top: 0;
+    }
+
+    .sobre__mision--div2 h3 {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+        text-align: end;
+        padding-right: 20px;
+    }
+
+    .sobre__mision--container1 {
+        width: 100%;
+    }
+
+    .sobre__mision--container1 p {
+        line-height: 1.4rem;
+        padding: 0 10px;
+    }
+
+    .sobre__mision--container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .sobre__mision--text {
+        box-shadow: 0 2px 5px black;
+        padding: 15px 20px;
+        height: 100%;
+    }
+
+    .sobre__mapa {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        margin-top: 0px;
+        margin-bottom: -20px;
+    }
+
+    .sobre__mapa--text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .sobre__mapa--text h2 {
+        font-size: 22px;
+    }
+
+    .sobre__mapa--text p {
+        padding: 0 20px;
+        text-align: center;
+        margin-top: 0px;
+    }
+
+    .sobre__mapa--container {
+        display: none;
+    }
+
+    .sobre__mapa--img {
+        width: 100%;
+        margin-top: -20px;
+        margin-bottom: -30px;
+    }
+
+    .sobre__google {
+        padding: 0;
+    }
+
+    .sobre__google--title {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sobre__google--title h2 {
+        font-size: 22px;
+    }
+
+    .btn-google {
+        background-color: #d8eead;
+        border: none;
+        border-radius: 50px;
+        padding: 0.3rem 1rem;
+    }
+
+    .btn-google:hover {
+        background-color: #d8eead;
+        box-shadow: 0 0 5px 1px black;
+        color: var(--second-color);
+    }
+
+    hr {
+        margin: 0 50px;
+    }
+
+    /* -------- SERVICIOS -------- */
+    .servicios__introduccion h1 {
+        font-size: 22px;
+        padding: 0 15px;
+    }
+
+    .servicios__introduccion p {
+        font-size: 1.1rem;
+        margin: 0 auto 20px;
+    }
+
+    .servicios__div {
+        gap: 30px;
+        padding: 40px 20px;
+    }
+
+    .servicios__container {
+        flex-direction: column;
+        height: 100%;
+        gap: 10px;
+        padding: 0 0 10px 0;
+        box-shadow: 0px 7px 10px black;
+        border-radius: var(--radius);
+        background-color: rgba(255, 255, 255, 0.5);
+        opacity: 0;
+        transition: transform 1s ease-out, opacity 1.5s ease-out;
+    }
+
+    .servicio__derecha {
+        transform: translateX(100px);
+    }
+
+    .servicio__izquierda {
+        transform: translateX(-100px);
+    }
+
+    .servicios__container.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .servicio__izquierda .servicios__texto {
+        order: 1;
+    }
+
+    .servicios__imagen {
+        min-height: 220px;
+        height: 220px;
+        box-shadow: none;
+    }
+
+    .servicios__imagen #servicio1,
+    .servicios__imagen #servicio2,
+    .servicios__imagen #servicio3,
+    .servicios__imagen #servicio4 {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .servicios__texto {
+        padding: 0 10px;
+        gap: 0px;
+        width: 100%;
+    }
+
+    .servicios__texto h2 {
+        font-size: 22px;
+        text-shadow: 2px 2px 3px rgba(0, 0, 0);
+    }
+
+    .servicios__descripcion p {
+        line-height: 1.2rem;
+    }
+
+    /* -------- PREGUNTAS -------- */
+    .preguntas__introduccion {
+        text-align: center;
+        gap: 10px;
+        padding: 30px 10px;
+    }
+
+    .preguntas__introduccion h1 {
+        font-size: 22px;
+        margin-left: 0;
+    }
+
+    .preguntas__introduccion div {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .preguntas__introduccion p {
+        font-size: 1rem;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .preguntas__div {
+        background-color: var(--second-color);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .preguntas2 {
+        height: 100%;
+    }
+
+    .preguntas3 {
+        width: 100%;
+        gap: 15px;
+        padding: 30px 10px;
+    }
+
+    .pregunta__imagen {
+        display: none;
+    }
+
+    .pregunta__titulo {
+        font-size: 1rem;
+    }
+
+    .pregunta__respuesta {
+        line-height: 1.2rem;
+    }
+
+    /* -------- PROYECTOS -------- */
+    .proyectos {
+        padding: 30px 0 70px;
+    }
+
+    .proyectos__introduccion h1 {
+        font-size: 22px;
+    }
+
+    .experience-section {
+        gap: 10px;
+        padding: 0 20px;
+        height: 90px;
+    }
+
+    .experience-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .proyectos__container {
+        width: 100%;
+    }
+
+    .proyectos__div {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+    .proyecto {
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 7px;
+    }
+
+    .proyecto__imagen {
+        height: 150px;
+        border-radius: 7px;
+    }
+
+    .proyecto__info {
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .proyecto__info h4 {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .proyectos__div .proyecto:nth-child(1) {
+        grid-column: span 1;
+    }
+
+    .proyectos__div .proyecto:nth-child(5) {
+        grid-column: span 1;
+    }
+
+    /* Estilos para el lightbox */
+    .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .lightbox-content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px;
+    }
+
+    .lightbox__img {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 10px;
+    }
+
+    /* -------- CONTACTO -------- */
     .contacto {
-        /* scroll-margin-block: 150px; */
-        scroll-margin-block: 0;
-    }    
-
+        scroll-margin-block: 135px;
+    }
+    
     .contacto__container {
         position: relative;
         display: flex;
@@ -1912,7 +1961,7 @@ hr {
     }
 
     .contacto__div-text h1 {
-        font-size: 1.8rem;
+        font-size: 22px;
     }
 
     .contact__description {
@@ -1925,13 +1974,17 @@ hr {
         flex-direction: column;
     }
 
+    .contacto__title {
+        font-size: 18px;
+    }
+
     .contact__form {
         margin-top: 10px;
         text-align: center;
     }
 
     .contacto__text {
-        font-size: 15px;
+        display: none;
     }
 
     .btn-contact {
@@ -1940,26 +1993,18 @@ hr {
 
     .error__message {
         position: static;
-        margin-top: 20px;
-        height: 20px;
+        margin-top: 10px;
+        height: 10px;
         bottom: initial;
         left: initial;
-        font-weight: var(--weight-400);
-    }
-
-    .color-succes {
-        color: var(--first-color);
-    }
-
-    .color-error {
-        color: red;
+        font-weight: var(--weight-900);
     }
 
     .contacto__map {
-        margin-top: -20px;
+        margin-top: -10px;
     }
 
-/* -------- FOOTER -------- */
+    /* -------- FOOTER -------- */
     .footer__container {
         flex-direction: column;
         padding: 0;
@@ -1975,7 +2020,7 @@ hr {
     .footer__enlaces,
     .footer__horario,
     .footer__contacto {
-        padding-top: 10px;
+        padding-top: 0px;
     }
 
     .footer__enlaces ul {
@@ -1990,15 +2035,171 @@ hr {
         padding: 0 30px;
     }
 
-    .footer__copy {
-        width: 100%;
-        text-align: center;
-        margin-top: 25px;
-        font-size: 14px;
+    .footer__hr {
+        display: block;
     }
 
     .footer__copy {
         padding: 0 30px;
         font-size: 15px;
+    }
+}
+
+@media (max-width: 417px) {
+    /* -------- HOME -------- */
+    .home__final h1 {
+        font-size: 17px;
+    }
+
+    /* -------- SOBRE -------- */
+    .sobre__historia--action {
+        padding: 20px 15px;
+    }
+
+    .sobre__mision--text {
+        box-shadow: 0 2px 5px black;
+        padding: 15px 15px;
+        height: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    /* -------- HOME -------- */
+    .home__cards {
+        padding: 10px 10px;
+    }
+    
+    .home__cards div {
+        line-height: 1.4rem;
+        padding: 10px 20px;
+    }
+    
+    .home__final h1 {
+        font-size: 17px;
+    }
+
+    /* -------- SOBRE -------- */
+    .sobre__historia--text {
+        padding: 20px;
+    }
+    
+    .sobre__historia--action {
+        padding: 20px 10px;
+        gap: 10px;
+    }
+
+    .sobre__mision--container {
+        width: 95%;
+    }
+
+    .sobre__mision--text {
+        padding: 15px 17px;
+        height: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    /* -------- HOME -------- */
+    .home__final h1 {
+        font-size: 16px;
+    }
+
+    /* -------- SOBRE -------- */
+    .sobre__historia--action {
+        padding: 20px;
+        gap: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre__mision--div div p {
+        padding: 0;
+    }
+
+    .sobre__mision--container1 p {
+        padding: 0;
+    }
+
+    .sobre__mision--container {
+        width: 97%;
+    }
+
+    .sobre__mision--text {
+        padding: 15px 10px;
+    }
+
+    .sobre__mapa--text p {
+        padding: 0;
+    }
+
+    /* -------- PROYECTO -------- */
+    .experience-section {
+        gap: 7px;
+    }
+
+    .experience-item {
+        font-size: 15px;
+    }
+
+    /* -------- CONTACTO -------- */
+    .contact__description {
+        width: 100%;
+    }
+
+    .contacto__text {
+        font-size: 13.5px;
+    }
+
+    /* -------- FOOTER -------- */
+    .footer__copy {
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 360px) {
+    /* -------- HOME -------- */
+    .home__cards div {
+        padding: 10px 10px;
+    }
+
+    .home__final h1 {
+        font-size: 15px;
+    }
+
+    /* -------- SOBRE -------- */
+    .sobre__mision--container {
+        width: 100%;
+    }
+
+    .sobre__mision--text {
+        padding: 12px 5px;
+    }
+
+    /* -------- PREGUNTAS -------- */
+    .preguntas__introduccion div p {
+        padding: 0 12px;
+    }
+
+    /* -------- PROYECTO -------- */
+    .experience-section {
+        gap: 10px;
+        flex-direction: column;
+        width: fit-content;
+        margin: 0 auto -20px;
+        height: 100%;
+    }
+
+    .experience-item {
+        font-size: 15px;
+    }
+
+    /* -------- CONTACTO -------- */
+    .contact__description {
+        width: 100%;
+    }
+
+    /* -------- FOOTER -------- */
+    .footer__copy {
+        padding: 0;
     }
 }
