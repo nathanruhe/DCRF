@@ -522,8 +522,6 @@ input {
     font-style: italic;
 }
 
-
-
 .sobre__mision {
     /* border: 3px solid blue; */
     display: flex;
@@ -690,7 +688,8 @@ input {
 
 .sobre__google {
     /* border: 3px solid orange; */
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;
     width: 100%;
     gap: 20px;
@@ -728,10 +727,9 @@ hr {
     background: white;
     position: relative;
     z-index: 1;
-    margin-top: -100px;
+    /* margin-top: -100px; */
+    margin-top: -40px;
 }
-
-/* Active tab */
 
 
 
@@ -983,7 +981,8 @@ hr {
 /*TODO --------- PROYECTOS --------- */
 .proyectos {
     /* border: 3px solid red; */
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1287,6 +1286,7 @@ iframe {
     width: 100%;
     display: flex;
     padding: 0 100px;
+    gap: 40px;
 }
 
 .footer__logo,
@@ -1314,7 +1314,7 @@ iframe {
 }
 
 .footer__logo {
-    width: 300px;
+    width: 260px;
 }
 
 
@@ -1425,10 +1425,11 @@ iframe {
         width: 100%;
         height: fit-content;
         background-color: var(--second-color);
-        padding: 4rem 2rem;
+        padding: 4rem 0rem;
         transition: all 0.8s ease-in-out;
         justify-content: center;
         align-items: center;
+        font-size: 15px;
     }
 
     .show-menu {
@@ -2008,6 +2009,7 @@ iframe {
     .footer__container {
         flex-direction: column;
         padding: 0;
+        gap: 10px;
     }
 
     .footer__logo,
@@ -2015,6 +2017,7 @@ iframe {
     .footer__horario,
     .footer__contacto {
         text-align: center;
+        align-items: center;
     }
 
     .footer__enlaces,
@@ -2099,6 +2102,11 @@ iframe {
 }
 
 @media (max-width: 380px) {
+    /* -------- HEADER -------- */
+    .nav__menu {
+        font-size: 14px;
+    }
+
     /* -------- HOME -------- */
     .home__final h1 {
         font-size: 16px;

@@ -394,10 +394,10 @@ const sendEmail = (e) => {
         // serviceID - templateID - #form - publickey
         emailjs
         .sendForm(
-            "service_rnmrfab",
-            "template_j99d1f9",
+            "service_ikk79c9",
+            "template_dx3102a",
             "#contact-form",
-            "9KjG4NOUX0PIE7q-p"
+            "BW8DrNcbwtSYA0B61"
         )
         .then(() => {
             // show message and add color, window + dot to open emoji
