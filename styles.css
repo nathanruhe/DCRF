@@ -1262,6 +1262,7 @@ hr {
     text-align: center;
     margin-top: 12px;
     font-weight: var(--weight-500);
+    font-size: 16px;
 }
 
 .map-container {
@@ -1317,6 +1318,10 @@ iframe {
     width: 260px;
 }
 
+.footer__logo span {
+    margin-top: -10px;
+    font-size: 15px;
+}
 
 .footer__logo img {
     margin-bottom: 20px;
